@@ -56,10 +56,12 @@ position: relative;
 z-index: 2;
 
 h4, h6{
+  padding: 0.5rem 0;
   position: relative;
   z-index: 2;
   text-align: center;
-  background: transparent
+  background: transparent;
+  color: var(--text-color-1)
 }
 input, textarea{
   position: relative;
