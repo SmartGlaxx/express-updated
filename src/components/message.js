@@ -5,36 +5,53 @@ import styled from 'styled-components';
 import {ButtonComponent} from './index';
 
 const Container = styled.div`
-color: var(--text-color-1);
-width: 90%;
-margin: 0.5rem auto;
-position:relative;
-zindex: 1
+// *{
+//   background: transparent;
+//   width: 100vw;
+// }
+// color: var(--text-color-1);
+// width: 100vw;
 
-.h4{
-    background: none;
-    color:var(--text-color-1);
-    text-align: center;
-    font-weight: 600;
-    text-shadow: 4px 0 0 darkdray;
-}
-h4, h6{
-  text-align:center;
-}
-.heading{
-    color:var(--text-color-1);
-    margin: 3rem 0
-}
-.button{
-  float: right
-}
-@media screen and (min-width: 1200px){
-    margin: 0.5rem auto;
-}
-@media screen and (min-width: 767px){
-    width: 50%;
-    margin: 0.5rem auto;
-}
+// margin: 0.5rem auto;
+// position:relative;
+// zindex: 1;
+
+
+// input, textarea{
+//   background: var(--background-color)
+// }
+
+// .h4{
+//     background: none;
+//     color:var(--text-color-1);
+//     text-align: center;
+//     font-weight: 600;
+//     text-shadow: 4px 0 0 darkdray;
+//     background: transparent;
+// }
+// h4, h6{
+//   text-align:center;
+// }
+// .heading{
+//     color:var(--text-color-1);
+//     margin: 3rem 0;
+//     background: transparent
+// }
+// .button{
+//   float: right
+// }
+// @media screen and (min-width: 1200px){
+//     margin: 0.5rem auto;
+// }
+// @media screen and (min-width: 767px){
+//     width: 50%;
+//     margin: 0.5rem auto;
+// }
+
+width:"90%";
+margin:"0 auto";
+background: red
+
 `
 
 const Message =()=>{
@@ -74,7 +91,7 @@ const [state, handleSubmit] = useForm("xeqvewpe");
       <h4 className='h4'>Send us a message</h4>
        <h6>We would like to hear from you</h6>
        </div>
-    <Form onSubmit={handleSubmit} method="POST" action='https://formspree.io/f/xeqvewpe'>
+    <Form onSubmit={handleSubmit} method="POST" action='https://formspree.io/f/xeqvewpe' style={{background: "inherit"}}>
   <Form.Group controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
     <Form.Control type="email" placeholder="Enter email" id="email" name="email"/>

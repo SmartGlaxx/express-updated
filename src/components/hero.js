@@ -16,6 +16,7 @@ const Container = styled.div`
 height: 90vh;
 max-width: 100%;
 overflow:hidden;
+
 .images{
     background:none;
     display: flex;

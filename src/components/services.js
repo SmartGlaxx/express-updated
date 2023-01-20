@@ -7,7 +7,9 @@ import card1 from "../assets/hero-cards/card3.jpg";
 import card2 from "../assets/hero-cards/card4.jpg";
 import card3 from "../assets/hero-cards/card1.jpg";
 import card4 from "../assets/hero-cards/card2.jpg";
-
+import card5 from "../assets/services-pictures/pic1.jpg";
+import card6 from "../assets/services-pictures/pic2.png";
+import pic3 from "../assets/services-pictures/pic3.png";
 
 const Container = styled.div`
 font-size: 0.9rem;
@@ -15,7 +17,7 @@ height: auto;
 width: auto;
 margin: 0 1px;
 overflow-x: hidden;
-background: var(--background-color-2);
+background: none;
 background-repeat: no-repeat;
 background-size: cover;
 *{
@@ -57,11 +59,22 @@ background-size: cover;
     background-attachment: fixed;
 }
 .sectionTwo{
-    width: 200vw;
-    background-image: url(${card2})
+    width: 120vw;
+    // background-image: url(${card5})
 }
 .sectionFour{
-    background-image: url(${card3})
+    // background-image: url(${card6});
+}
+
+.sectionTwo img{
+    background: transparent;
+    width: 60rem;
+    margin-left: -50rem
+}
+.sectionFour img{
+    background: transparent;
+    width: 30rem;
+    margin-left: -50rem
 }
 .section h2{
     color: #fff;
@@ -127,15 +140,13 @@ background-size: cover;
         position: absolute;
         top: 2rem
     }
-    .sectionTwo{
-        background: var(--background-color-2)
-    }
-    .sectionFour{
-        background: var(--background-color-1)
-    }
     .sectionOne h2, .sectionTwo h2, .sectionFour h2{
         position: absolute;
         
+    }
+
+    .sectionFour img{
+        margin-left: 0rem
     }
 }
 
@@ -150,7 +161,7 @@ const Services =()=>{
         let timeLine = gsap.timeline()
 
         timeLine.to(".service", 2, {
-            x: "-400vw",
+            x: "-300vw",
             scrollTrigger:{
                 trigger: ".service",
                 start: "center center",
@@ -171,7 +182,7 @@ const Services =()=>{
             rotation: -1,
             ease: "power4",
             scrollTrigger:{
-                trigger: ".sectionOne h2",
+                trigger: ".section",
                 start: 'center center',
                 end: "+=2000",
                 scrub: true,
@@ -193,7 +204,7 @@ const Services =()=>{
             scale: 1,
             ease: "power2",
             scrollTrigger:{
-                trigger: ".sectionOne h2",
+                trigger: ".section",
                 start: 'center center',
                 end: "+=2000",
                 scrub: true,
@@ -202,39 +213,21 @@ const Services =()=>{
                 revese: true
             }
         })
-    
-    // timeLine.fromTo(".sectionThree h2",{
-    //     opacity: 0, 
-    //     scale: 2,
-    //     yoyo: true
-    // },
-    // {
-    //     opacity: 1, 
-    //     scale: 0.9,
-    //     duration: 5,
-    //     scrollTrigger:{
-    //         trigger: ".sectionThree h2",
-    //         start: 'center center',
-    //         end: "+=2000",
-    //         scrub: true,
-    //         pin: true,
-    //         toggleActions: 'play none none reverse',
-    //         revese: true
-    //     }
-    // })
     timeLine.fromTo(".sectionFour h2",{
+        x: 0,
         y: 0,
         scale: 1,
         yoyo: true
     },
     {
-        y: -100, 
-        // scale: 2,
+        x: 100,
+        y: -200, 
+        scale: 1.5,
         delay: 5,
         scrollTrigger:{
-            trigger: ".sectionOne h2",
-            start: 'center center',
-            end: "+=2000",
+            trigger: ".section",
+            start: 'top center',
+            end: "+=4000",
             scrub: true,
             pin: true,
             toggleActions: 'play none none reverse',
@@ -243,32 +236,23 @@ const Services =()=>{
     })
 },[])
     
-    return <Container className='row'>
-    {OurServices.map(service =>{
-        const {name, icon, text} = service;
-        return (
-            <div className='service col-sm-12 col-md-4'>
-            <div className='section ' >
-                
-            </div>
-            <div className='section sectionOne' >
-                <h2>Access a Range of</h2>
-            </div>
-            {/* <div className='section sectionOne' style={{backgroundImage: `url(${card1})`}}>
-                <h2>Sports Wears</h2>
-            </div> */}
-            <div className='section sectionTwo' >
-                <h2>Home Accessories</h2>
-            </div>
-            {/* <div className='section sectionThree' style={{backgroundImage: `url(${card2})`}}>
-                
-            </div> */}
-            <div className='section sectionFour' >
-                <h2>Gadgets</h2>
-            </div>
+return <Container className='row'>
+        <div className='service col-sm-12 col-md-4'>
+        <div className='section ' >
+            
         </div>
-        )
-    })}
+        {/* <div className='section sectionOne' >
+            <h2>Access a Range of</h2>
+        </div> */}
+        <div className='section sectionTwo' >
+            <h2>Home Accessories</h2>
+            <img src={pic3} alt="Picture" />
+        </div>
+        <div className='section sectionFour' >
+            <h2>Gadgets</h2>
+            <img src={card6} alt="Picture" />
+        </div>
+    </div>
     </Container>
 }
 
