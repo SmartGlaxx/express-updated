@@ -5,10 +5,7 @@ import styled from 'styled-components';
 import {ButtonComponent} from './index';
 
 const Container = styled.div`
-// *{
-//   background: transparent;
-//   width: 100vw;
-// }
+
 // color: var(--text-color-1);
 // width: 100vw;
 
@@ -48,10 +45,28 @@ const Container = styled.div`
 //     margin: 0.5rem auto;
 // }
 
-width:"90%";
-margin:"0 auto";
-background: red
+*{
+  position: relative;
+  z-index: 2;
+}
+width: 90%;
+margin: 0 auto;
+background: transparent
+position: relative;
+z-index: 2;
 
+h4, h6{
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  background: transparent
+}
+input, textarea{
+  position: relative;
+  z-index: 2;
+  background: var(--background-color);
+ 
+}
 `
 
 const Message =()=>{
@@ -79,7 +94,7 @@ const [state, handleSubmit] = useForm("xeqvewpe");
       <ValidationError prefix="Message" field="message" errors={state.errors} />
   </Form.Group>
 
-  <ButtonComponent  type="submit" disabled={state.submitting} >
+  <ButtonComponent  type="submit" disabled={state.submitting} className="btn">
     Submit
   </ButtonComponent>
 </Form>
@@ -107,7 +122,7 @@ const [state, handleSubmit] = useForm("xeqvewpe");
       <ValidationError prefix="Message" field="message" errors={state.errors} />
   </Form.Group>
 
-  <ButtonComponent  type="submit" disabled={state.submitting} >
+  <ButtonComponent  type="submit" disabled={state.submitting} className="btn">
     Submit
   </ButtonComponent>
 </Form>
