@@ -3,8 +3,11 @@ import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import appStore from '../assets/app-links/appStore.png'
 import playStore from '../assets/app-links/playStore.png'
+import {useAppContext} from '../contexts/context'
 import card1 from '../assets/logo3.jpg'
 import {Links} from '../utility/constants'
+import logo1 from "../assets/logo/logo1.png";
+import logo2 from "../assets/logo/logo2.png";
 
 const Container = styled.div`
 *{
@@ -23,6 +26,11 @@ z-index: 1;
 
 .inner-container{
     display: flex;
+}
+.logo{
+    width: 3rem;
+    heigth: 3rem;
+    margin: 0 2rem
 }
 .img{
     border-radius: 50%;
@@ -75,7 +83,9 @@ z-index: 1;
     margin-left: 1rem 
 }
 h5{
-    margin: 1rem 0
+    margin: 1rem 0;
+    font-size: 3rem;
+    font-family: 'Tangerine', "arial";
 }
 hr{
     background: var(--menu-color);
@@ -117,10 +127,13 @@ h6{
 }
 `
 const Footer =()=>{
+    const {showMenu, showMenuBar, theme} = useAppContext()
     return <Container >
         <div className='inner-container'>
         <div className='div-0'>
-            <h6>Download our Mobile App</h6>
+        <img src={theme == "light" ? logo2 : logo1} alt="logo" className="logo"/>
+            <hr />
+            <div>Download our Mobile App</div>
             <p>Get closer and easier access to your 
             shopping using our mobile apps.</p>
 

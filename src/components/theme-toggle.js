@@ -8,6 +8,7 @@ const Container = styled.div`
 background: var(--background-color-2);
 font-size: 1.2rem;
 color: var(--menu-color);
+margin: 1rem;
 
 .crescent{
     position: absolute;
@@ -22,8 +23,8 @@ color: var(--menu-color);
 }
 .crescent-menu{
     position: absolute;
-    right: 1.5rem;
-    top: 1.5rem;
+    right: 2rem;
+    top: 2rem;
     display: block;
     background: none;
     font-size: 1.2rem;

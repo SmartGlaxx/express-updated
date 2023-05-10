@@ -7,7 +7,7 @@ import {ButtonComponent} from './index'
 import {Link} from 'react-router-dom'
 
 const Container = styled.div`
-margin-top: 500vh;
+margin-top: 5rem;
 font-size: 0.9rem;
 height: auto;
 width: auto;
@@ -18,9 +18,11 @@ overflow: hidden;
 .h4{
     background:none;
     color:var(--text-color-1);
+    color: var(--titles-color);
+    font-family: 'Tangerine', "arial";
     text-align: center;
     margin: 3rem 0;
-    font-size: 2.5rem;
+    font-size: 7rem;
     font-weight: 600;
     text-shadow: 4px 0 0 darkdray;
     position:relative;

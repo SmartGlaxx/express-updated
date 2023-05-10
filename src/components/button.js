@@ -31,12 +31,14 @@ box-shadow:
 }
 `
 const HeroContainer = styled.button`
+float: left;
 cursor: pointer;
 text-transform: uppercase;
 background:  var(--button-background);
 color: var(--button-background-hover);
 border: none;
 padding: 0.6rem 2rem;
+margin: 1rem 0;
 outline: none;
 font-size: 1rem;
 box-shadow:
@@ -51,6 +53,10 @@ box-shadow:
     background: var(--button-background-hover);
     color:  var(--button-background);
     z-index: 2
+}
+@media screen and (max-width: 767px){
+  right: 1rem;
+  position: absolute
 }
 `
 

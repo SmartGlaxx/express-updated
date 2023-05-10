@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {NavLink, Link} from 'react-router-dom';
 import styled from 'styled-components';
 import { FaBars } from 'react-icons/fa';
@@ -9,11 +9,11 @@ import {useAppContext} from '../contexts/context'
 import {LoginButton, LogoutButton, ShoppingCart, ShoppingCartMenu, Toggle} from './index';
 import { useAuth0 } from "@auth0/auth0-react";
 import {Spinner} from 'react-bootstrap'
+import logo1 from "../assets/logo/logo1.png";
+import logo2 from "../assets/logo/logo2.png";
 
 const Container = styled.div`
-${'' /* *{
-    background: var( --menu-inner-background);
-} */}
+
     background: var(--menu-inner-background);
     margin: 0;
     position: fixed;
@@ -23,7 +23,11 @@ ${'' /* *{
     justify-content: center;
     width: 100%;
     z-index: 10;
-
+.logo{
+    width: 3rem;
+    heigth: 3rem;
+    margin: 0 2rem
+}
 .header-main{
     background: var(--menu-inner-background);
     display: flex;
@@ -130,12 +134,12 @@ ${'' /* *{
 
 const Header =()=>{
     const { user, isAuthenticated, isLoading } = useAuth0();
-    const {showMenu, showMenuBar} = useAppContext()
+    const {showMenu, showMenuBar, theme} = useAppContext()
+    
     
     if(isLoading){
         return <Spinner />
     }
-
    const userAuthenticated = isAuthenticated && user
      let userName = ''
      if(userAuthenticated){
@@ -167,7 +171,7 @@ const Header =()=>{
         <Sidebar />
         <div className='header-main'>
         <Link to='/' className='title-link'>
-        <h2 className='title'>Smart<span className='underscore'>_</span>Express</h2>
+        <img src={theme == "light" ? logo2 : logo1} alt="logo" className="logo"/>
         </Link>
             {user && <><span className='username'>{userName}</span>
             <span className='user-email'>{userEmail}</span></>

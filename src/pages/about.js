@@ -11,7 +11,10 @@ padding-top: 4rem;
 margin-bottom: 5rem;
 
 h5{
-	text-align:center
+	text-align:center;
+    font-family: 'Tangerine', "arial";
+    font-size: 3rem;
+    color: var(--titles-color)
 }
 .title{
     width: 100%;
@@ -36,7 +39,6 @@ h5{
     text-justify: inter-word
 }
 .div-1{
-    ${'' /* padding: 2rem; */}
     width: 40%
 }
 .about-img{
@@ -84,7 +86,7 @@ React.useEffect(() => {
         <img src = {card1} alt='' className='about-img'/>
        </div>
        <div className='div-0'>
-        <h5>We Are Your Number One Store</h5>
+        <h5>Why we are your number one store</h5>
         <p>
             Lorem ipsum dolor sit amet, consectetur 
             adipiscing elit. Aliquam sodales urna orci,

@@ -3,13 +3,10 @@ import {OurServices} from '../utility/constants'
 import styled from 'styled-components'
 import { gsap } from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger"
-import card1 from "../assets/hero-cards/card3.jpg";
-import card2 from "../assets/hero-cards/card4.jpg";
-import card3 from "../assets/hero-cards/card1.jpg";
-import card4 from "../assets/hero-cards/card2.jpg";
-import card5 from "../assets/services-pictures/pic1.jpg";
-import card6 from "../assets/services-pictures/pic2.png";
+import pic1 from "../assets/services-pictures/pic1.png";
+import pic2 from "../assets/services-pictures/pic2.png";
 import pic3 from "../assets/services-pictures/pic3.png";
+import pic4 from "../assets/services-pictures/pic4.png";
 
 const Container = styled.div`
 font-size: 0.9rem;
@@ -28,9 +25,52 @@ background-size: cover;
     box-sizing: border-box;
 }
 .service{
-   display:flex;
-   flex-wrap: nowrap
+    width: 100vw;
+    // background: linear-gradient(var(--background-color, --background-color-2));
+    background: linear-gradient(var(--background-color, #eee), var(--background-color-5, #ddd));
+    display:grid;    
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
     
+}  
+.service-image-box{
+    position: relative;
+    margin: 0 auto;
+    background: var(--image-background);
+    // padding: 2rem;
+    // max-width: calc(50vw - 10rem);
+    width: 100%;
+    // max-height: 40rem;
+    overflow: hidden
+}
+.service-images:hover{
+    transform: scale(1.2);
+    transition: all 0.5s
+}
+.image-title{
+    float: left;
+    color: var(--text-color-1)
+}
+.image-subtitle{
+    float: left;
+    font-size: 4rem;
+    color: var(--titles-color);
+    font-family: 'Tangerine', "arial";
+    position: absolute;
+    left: 0;
+}
+@media screen and (max-width: 800px){
+    
+        padding: 0rem
+    
+    .service{  
+        grid-gap: 0.5rem;
+    }
+}
+@media screen and (max-width: 600px){
+    .service{  
+        grid-template-columns: 1fr;
+    }
 }
 .inner{
    box-sizing: border-box;
@@ -53,17 +93,14 @@ background-size: cover;
     flex-shrink: 0;
     align-items: center;
     justify-content: center;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background: red
 }
 .sectionTwo{
     width: 120vw;
-    // background-image: url(${card5})
+    
 }
 .sectionFour{
-    // background-image: url(${card6});
+    
 }
 
 .sectionTwo img{
@@ -150,109 +187,36 @@ background-size: cover;
     }
 }
 
+
 ` 
 
 const Services =()=>{
 
-    gsap.registerPlugin(ScrollTrigger)
-
-    
-    useEffect(()=>{
-        let timeLine = gsap.timeline()
-
-        timeLine.to(".service", 2, {
-            x: "-300vw",
-            scrollTrigger:{
-                trigger: ".service",
-                start: "center center",
-                end: "+=4000",
-                scrub: true,
-                pin: true
-            }
-        })
-
-        timeLine.fromTo(".sectionOne h2",{
-            x: -100,
-            y: 0,
-            rotation:30,
-        },
-        {
-            x:500,
-            y: "50%",
-            rotation: -1,
-            ease: "power4",
-            scrollTrigger:{
-                trigger: ".section",
-                start: 'center center',
-                end: "+=2000",
-                scrub: true,
-                pin: true,
-                toggleActions: 'play none none reverse',
-                revese: true
-            }
-        })
-        timeLine.fromTo(".sectionTwo h2",{
-            opacity: 0,
-            x: "-105vw",
-            y: "-80%",
-            scale: 0.7,
-        },
-        {
-            x: "10vw",
-            y: "30%",
-            opacity: 1,
-            scale: 1,
-            ease: "power2",
-            scrollTrigger:{
-                trigger: ".section",
-                start: 'center center',
-                end: "+=2000",
-                scrub: true,
-                pin: true,
-                toggleActions: 'play none none reverse',
-                revese: true
-            }
-        })
-    timeLine.fromTo(".sectionFour h2",{
-        x: 0,
-        y: 0,
-        scale: 1,
-        yoyo: true
-    },
-    {
-        x: 100,
-        y: -200, 
-        scale: 1.5,
-        delay: 5,
-        scrollTrigger:{
-            trigger: ".section",
-            start: 'top center',
-            end: "+=4000",
-            scrub: true,
-            pin: true,
-            toggleActions: 'play none none reverse',
-            revese: true
-        }
-    })
-},[])
     
 return <Container className='row'>
-        <div className='service col-sm-12 col-md-4'>
-        <div className='section ' >
-            
+        <div className='service'>
+        <div className='service-image-box'>
+            <h3 className='image-title'>Windows Notebook</h3><br />
+            <h2 className='image-subtitle'>12 Gig ram & Backlit keyboard</h2>
+            <img src={pic1} alt="image1" className="service-images"/>
         </div>
-        {/* <div className='section sectionOne' >
-            <h2>Access a Range of</h2>
-        </div> */}
-        <div className='section sectionTwo' >
-            <h2>Home Accessories</h2>
-            <img src={pic3} alt="Picture" />
+        <div className='service-image-box'>
+            <h3 className='image-title'>OneMix Running Shoe</h3><br />
+            <h2 className='image-subtitle'>Enhanced performance</h2>
+            <img src={pic2} alt="image2" className="service-images"/>
         </div>
-        <div className='section sectionFour' >
-            <h2>Gadgets</h2>
-            <img src={card6} alt="Picture" />
+
+        <div className='service-image-box'>
+            <h3 className='image-title'>Food Processor</h3><br />
+            <h2 className='image-subtitle'>Efficient & versatile</h2>
+            <img src={pic3} alt="image3" className="service-images"/>
         </div>
-    </div>
+        <div className='service-image-box'>
+            <h3 className='image-title'>4K Android TV</h3><br />
+            <h2 className='image-subtitle'>Immersive experience</h2>
+            <img src={pic4} alt="image4" className="service-images"/>
+        </div>
+        </div>
     </Container>
 }
 

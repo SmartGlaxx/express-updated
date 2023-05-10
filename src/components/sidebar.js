@@ -7,6 +7,8 @@ import {useUserContext} from '../contexts/userContext'
 import { FaTimes, FaShoppingCart, FaLock, FaUserLock } from 'react-icons/fa';
 import { ToggleMenu, LoginButton, LogoutButton } from './index';
 import { useAuth0 } from "@auth0/auth0-react";
+import logo1 from "../assets/logo/logo1.png";
+import logo2 from "../assets/logo/logo2.png";
 
 
 const Container = styled.div`
@@ -20,13 +22,13 @@ font-weight: 500;
     background: none;
     background: var(--menu-background);
 }
+
 .menu-title{
-    font-family: 'Tangerine', "arial";
+    position: absolute;
     font-size: 1.8rem;
-    color: var(--menu-color);
-    letter-spacing: 0.15rem;
-    padding-top: 0.8rem;
-    margin-left: 5%;
+    width: 3rem;
+    top: 2rem;
+    left: 0rem;
     background: var(--menu-background);
 }
 .menu-title-link{
@@ -36,7 +38,6 @@ font-weight: 500;
 h4{
     text-align:center;
     color: var(--h4-color);
-    ${'' /* padding-top: 0.5rem */}
 }
 .close-btn{
     right:0.4rem;
@@ -52,7 +53,7 @@ h4{
 .main{
     height: 80%;
     width: 90%;
-    margin: 8% 5%;
+    margin: 20% 5%;
     padding: 1rem 0;
     background: var(--menu-inner-background);
     @media screen and (orientation: landscape){
@@ -131,9 +132,8 @@ hr{
 `
 
 const Sidebar =()=>{
-    // const {user, isAuthenticated, isLoading} = useUserContext()
     const { user, isAuthenticated, isLoading } = useAuth0();
-    const {showMenuBar, hideMenu} = useAppContext()
+    const {showMenuBar, hideMenu, theme} = useAppContext()
     const [sidebarUser, setSideBarUser] = useState({})
 
     const userAuthenticated = isAuthenticated && user
@@ -167,9 +167,7 @@ const Sidebar =()=>{
 
     return (<Container className = {`${showMenuBar ? "show-menu menu" : "menu"}`}>
     <div className='header-menu'>
-     <Link to='/' className='menu-title-link' onClick={hideMenu}>
-        <h2 className='menu-title'>Smart Express</h2>
-    </Link>
+        <img src={theme == "light" ? logo2 : logo1} alt="logo" className="logo menu-title"/>
     </div>
     
     <ToggleMenu />
@@ -196,9 +194,6 @@ const Sidebar =()=>{
              <LoginButton />
             }
            
-            {/* <Link to='/login' className='sidebar-linkItem'> */}
-            {/* <span className='icon'><FaLock/></span>Login
-            </Link> */}
             </div>
         </div>
     </Container>)

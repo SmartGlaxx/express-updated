@@ -2,7 +2,6 @@ import React, {useEffect, useRef} from 'react';
 import styled from 'styled-components';
 import {Hero, Services, Featured, Cta, Message} from '../components'
 import pic1 from "../assets/backgrounds/pic2.jpg"
-// import card2 from "../assets/cta-pictures/pic3.png";
 
 import {gsap} from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';

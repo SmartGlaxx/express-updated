@@ -1,6 +1,6 @@
 {
   "name": "Smart-Express",
-  "homepage": "http://express.smartegbuchulem.co/",
+  "homepage": "https://express.smartegbuchulem.co/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,7 +19,7 @@
     "react-icons": "^4.2.0",
     "react-paystack": "^3.0.3",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.2",
+    "react-scripts": "^5.0.1",
     "react-tooltip": "^4.2.19",
     "styled-components": "^5.2.3",
     "web-vitals": "^1.1.0"

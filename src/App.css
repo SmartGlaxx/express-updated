@@ -26,8 +26,10 @@
   --background-color-2: #181c29;
   --background-color-3 : #181c29;
   --background-color-4 : #fff;
+  --background-color-5 : #ddd;
   --gradient-background-color : #08002b;
   --icon-color: #bbb;
+  --titles-color: #bbb;
   --menu-color: #fff;
   --list-item-margin: 1rem;
   --menu-background: #0e1017;
@@ -42,6 +44,7 @@
   --button-background: #181c29;
   --button-background-hover: #ddd;
   --overlay-background: rgba(20,20,20,0.8);
+  --image-background: rgba(120,120,120,0.1);
   --warning-background: rgba(50,50,50);
   --purchase-background: rgba(30,30,50);
   --buy-btn-background-1: #dd2211;
@@ -57,8 +60,10 @@
   --background-color-2: #eee;
   --background-color-3 : #eee;
   --background-color-4 : #777;
+  --background-color-5 : #444;
   --gradient-background-color : #8d7ecf;
   --icon-color: #444;
+  --titles-color: #444;
   --menu-color: #000;
   --list-item-margin: 1rem;
   --menu-background: #f1efe9;
@@ -73,6 +78,7 @@
   --button-background: #ddd;
   --button-background-hover: #181c29;
   --overlay-background: rgba(20,20,20,0.8);
+  --image-background: rgba(120,120,120,0.1);
   --warning-background: rgba(50,50,50);
   --purchase-background: rgba(30,30,50);
   --buy-btn-background-1: #dd2211;

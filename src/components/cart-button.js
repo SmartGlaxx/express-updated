@@ -30,14 +30,16 @@ const Container = styled.div`
 }
 
 .cart-count-1, .cart-count-2{
-    background: red;
+   font-weight: bold;
+    border: 2px solid orange;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 22px;
     height: 22px;
-    color: var(--menu-color);
+    background: var(--background-color-2);
+    color: var(--text-color-2);
     z-index: 2;
 }
 

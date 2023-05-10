@@ -18,19 +18,16 @@ padding-top: 4rem;
 margin-bottom: 5rem;
 width: 100%;
 margin: 0 auto;
-${'' /* background: red; */}
 position: relative;
 
 .main{
     margin: 15px auto; 
     position: relative; 
     width: 95%;
-    ${'' /* background: green; */}
 }
 .inner-container{
     padding: 0 2rem;
     display: flex;
-    ${'' /* background: blue; */}
 }
 .cart-header{
     font-size: 0.9rem;
@@ -40,7 +37,10 @@ position: relative;
 }
 .cart-number{
     font-weight: 600; 
-    text-align: center
+    text-align: center;
+    font-family: 'Tangerine', "arial";
+    font-size: 3rem;
+    color: var(--titles-color)
 }
 .cart{
     width: 70%;
@@ -198,9 +198,6 @@ span, strong{
 }
 
 .close-purchase{
-       ${'' /* position: absolute;
-    right: 1rem;
-    top: 1rem; */}
     padding: 0.2rem;
     border-radius: 5px;
     background: none;
@@ -287,13 +284,7 @@ margin: 3rem auto;
 .login-btn{
     width: 100%
 }
-${'' /* .continue-shopping{
-    background: red;
-    position: absolute;
-    bottom: 1rem;
-    height: 10rem;
-    left: 1rem
-} */}
+
 @media screen and (max-width: 767px){
     .cart{width: 90%; font-size: 0.8rem}
     .itemColor{padding: 0.1rem 0.3rem}
@@ -408,7 +399,7 @@ const Cart =()=>{
             <div className='inner-container'>
                 <div className='cart'>
                         <div className='cart-header'>
-                        <div className='cart-number'>Cart ({cartItems.length} items) </div>
+                        <div className='cart-number'> Your cart ({cartItems.length} items) </div>
                         </div>
                         {cartItems.map((item, i )=> {
                             const {_id, name, amount, selectColor, price, image, shipping} = item
